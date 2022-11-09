@@ -59,9 +59,9 @@ VALUES
 -- Subject (Unique makeup of the 3 referenced columns) (referenced columns must come from available rows in reference table)
 CREATE	TABLE DIMSubject
 (
-	SubjectID			INT 			NOT NULL
+	SubjectID		INT 		NOT NULL
 		PRIMARY KEY,
-	SubjectName			NVARCHAR(50)	NOT NULL
+	SubjectName		NVARCHAR(50)	NOT NULL
 		REFERENCES REF.SubjectName(SubjectName),
 	SubjectCategory		NVARCHAR(50)	NOT NULL
 		REFERENCES REF.SubjectCategory(SubjectCategory),
@@ -99,10 +99,10 @@ VALUES
 -- Instructor table with 2-column constraint
 CREATE	TABLE DIMInstructor
 (
-	InstructorID		INT			NOT NULL 
+	InstructorID		INT		NOT NULL 
 		PRIMARY KEY,
-	InstructorName		NVARCHAR(80)		NOT NULL,
-	InstructorCompany	NVARCHAR(50)		NOT NULL,
+	InstructorName		NVARCHAR(80)	NOT NULL,
+	InstructorCompany	NVARCHAR(50)	NOT NULL,
 	CONSTRAINT UCInstructor UNIQUE (InstructorName, InstructorCompany)
 );
 INSERT INTO	DIMInstructor (InstructorID, InstructorName, InstructorCompany)
