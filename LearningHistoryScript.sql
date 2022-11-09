@@ -99,7 +99,7 @@ VALUES
 -- Instructor table with 2-column constraint
 CREATE	TABLE DIMInstructor
 (
-	InstructorID		INT					NOT NULL 
+	InstructorID		INT			NOT NULL 
 		PRIMARY KEY,
 	InstructorName		NVARCHAR(80)		NOT NULL,
 	InstructorCompany	NVARCHAR(50)		NOT NULL,
@@ -208,19 +208,19 @@ VALUES
 -- Main FACT table
 CREATE	TABLE FACTCourses
 (
-	CourseID				INT				NOT NULL
+	CourseID			INT			NOT NULL
 	PRIMARY KEY
-	, CourseName			NVARCHAR(100)	NOT NULL
+	, CourseName			NVARCHAR(100)		NOT NULL
 	, DateCompleted			DATE			NOT NULL
-	, SubjectID				INT				NOT NULL
-	, LearningPathID		INT				NOT NULL
+	, SubjectID				INT		NOT NULL
+	, LearningPathID		INT			NOT NULL
 	FOREIGN KEY REFERENCES DIMLearningPath(LearningPathID)
-	, LearningPlatformID 	NVARCHAR(2)		NOT NULL
+	, LearningPlatformID 	NVARCHAR(2)			NOT NULL
 	FOREIGN KEY REFERENCES DIMLearningPlatform(LearningPlatformID)
-	, InstructorID			INT				NOT NULL
+	, InstructorID			INT			NOT NULL
 	FOREIGN KEY REFERENCES DIMInstructor(InstructorID)
 	, CourseDurationMinutes INT				NOT NULL
-	, MyTimeEstMultiplier 	DECIMAL(2,1)	NOT NULL
+	, MyTimeEstMultiplier 	DECIMAL(2,1)			NOT NULL
 );
 INSERT INTO	FACTCourses (CourseID, CourseName, DateCompleted, SubjectID, LearningPathID, LearningPlatformID, InstructorID, CourseDurationMinutes, MyTimeEstMultiplier)
 VALUES
