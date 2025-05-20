@@ -85,7 +85,7 @@ VALUES
 (12, 'Microsoft Project', 'Project Management', 'Microsoft Project'),
 (13, 'Excel', 'Data Visualization', 'Excel'),
 (14, 'Scrum', 'Project Management', 'None'),
-(15, 'Python', 'Data Science', 'PyCharm'),
+(15, 'Python', 'Data Engineering', 'PyCharm'),
 (16, 'Agile', 'Project Management', 'Jira'),
 (17, 'Agile', 'Project Management', 'None'),
 (18, 'R', 'Data Analytics', 'Rstudio'),
