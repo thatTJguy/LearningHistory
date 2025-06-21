@@ -208,17 +208,16 @@ VALUES
 -- Main FACT table
 CREATE	TABLE FACTCourses
 (
-	CourseID			INT			NOT NULL
-	PRIMARY KEY
+	CourseID                	INT IDENTITY(1,1) 	PRIMARY KEY
 	, CourseName			NVARCHAR(100)		NOT NULL
 	, DateCompleted			DATE			NOT NULL
 	, SubjectID			INT		NOT NULL
 	, LearningPathID		INT			NOT NULL
-	FOREIGN KEY REFERENCES DIMLearningPath(LearningPathID)
+		FOREIGN KEY REFERENCES DIMLearningPath(LearningPathID)
 	, LearningPlatformID 	NVARCHAR(2)			NOT NULL
-	FOREIGN KEY REFERENCES DIMLearningPlatform(LearningPlatformID)
+		FOREIGN KEY REFERENCES DIMLearningPlatform(LearningPlatformID)
 	, InstructorID			INT			NOT NULL
-	FOREIGN KEY REFERENCES DIMInstructor(InstructorID)
+		FOREIGN KEY REFERENCES DIMInstructor(InstructorID)
 	, CourseDurationMinutes 	INT			NOT NULL
 	, MyTimeEstMultiplier 		DECIMAL(2,1)		NOT NULL
 );
